@@ -17,7 +17,7 @@
 <div class="gh-viewport">
 
 <header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
+    <nav class="gh-head-inner gh-container gh-primary-nav">
 
         <div class="gh-head-brand">
             <a class="gh-head-logo" href="{{@site.url}}">
@@ -34,20 +34,29 @@
             </a>
         </div>
         <div class="gh-head-menu">
+             <a class="gh-burger gh-visible-burger" role="button" aria-label="menu">
+                <div class="gh-burger-box">
+                    <div class="gh-burger-inner"></div>
+                </div>
+            </a>
+            {{search}}
             {{navigation}}
         </div>
         <div class="gh-head-actions">
             <div class="gh-head-actions-list">
                 {{search}}
-                {{#if @site.members_enabled}}
+                {{!-- {{#if @site.members_enabled}}
                     {{^if @member}}
                     <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
                     {{else}}
                     <a class="gh-button" href="#/portal/account">Account</a>
                     {{/if}}
-                {{/if}}
+                {{/if}} --}}
             </div>
         </div>
+    </nav>
+    <nav class="gh-head-secondary gh-secondary-nav">
+        {{navigation type="secondary"}}
     </nav>
 </header>
 
@@ -61,7 +70,7 @@
 <footer class="gh-foot">
     <div class="gh-container">
         <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
+       
         </div>
         <div class="gh-foot-meta">
             Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
