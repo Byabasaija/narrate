@@ -1,0 +1,43 @@
+{{#get "posts" limit="6" filter="tag:kingdoms"}}
+    {{#if posts}}
+        <div class="business-section section-space mt-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="business-inner-content">
+                            <div class="business-section-area">
+                                <div class="d-flex align-items-center justify-content-between mt-10 mb-30">
+                                    <div class="section-title d-flex align-items-center ">
+                                        {{> title-bar}}
+                                        <h4>{{t "Kingdoms"}}</h4>
+                                    </div>
+                                    <div class="tags-all">
+                                        <a href="/tag/kingdoms">{{t "view all"}}
+                                            <span class="left-icon ml-2">{{> "icons/arrow-right"}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="post-content-wrapper">
+                                    <div class="row">
+                                        {{#foreach posts limit="2" to="2" visibility="all"}}
+                                        <div class="col-lg-6">
+                                            {{> post-card/business-thumbnail}}
+                                        </div>
+                                        {{/foreach}}
+                                    </div>
+                                    <div class="row">
+                                        {{#foreach posts  from="3" visibility="all"}}
+                                        <div class="col-lg-6">
+                                            {{> post-card/small-thumbnail}}
+                                        </div>
+                                        {{/foreach}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/get}}

@@ -1,0 +1,39 @@
+{{#get "posts" limit="7" filter="tag:culture"}}
+    {{#if posts}}
+        <div class="top-read-section  section-space">
+            <div class="container">
+                <div class="section-title d-flex align-items-center mt-20  mb-30">
+                    {{> title-bar}}
+                    <h4>{{t "Culture"}}</h4>
+                </div>
+                <div class="post-wrapper-content">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-column-post top-read ">
+                                {{#foreach posts visibility="all" to="1"}}
+                                    {{> post-card/big-thumbnail}}
+                                {{/foreach}}
+                                {{#foreach posts from="2" to="3" visibility="all"}}
+                                    {{> post-card/small-thumbnail}}
+                                {{/foreach}}
+                            </div>
+                        </div>
+                        {{#foreach posts from="4" limit="1" visibility="all"}}
+                            {{> post-card/top-reads-big-thumbnail}}
+                        {{/foreach}}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-column-post top-read ">
+                                {{#foreach posts from="5" limit="1" visibility="all"}}
+                                    {{> post-card/big-thumbnail}}
+                                {{/foreach}}
+                                {{#foreach posts from="6" visibility="all"}}
+                                    {{> post-card/small-thumbnail}}
+                                {{/foreach}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/get}}

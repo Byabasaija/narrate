@@ -1,0 +1,21 @@
+{{#get "posts" limit="5" filter="tag:foreign-affairs"}}
+    {{#if posts}}
+        <div class="col-lg-4">
+            <div class="single-column-post mb-50">
+                <div class="section-title d-flex align-items-center mt-10 mb-30">
+                    {{> title-bar}}
+                    <h4>{{t "Foreign Affairs"}}</h4>
+                </div>
+            </div>
+            <div class="design-content">
+                {{#foreach posts  limit="1" to="1" visibility="all"}}
+                    {{> post-card/big-thumbnail}}
+                {{/foreach}}
+            
+                {{#foreach posts from="2" visibility="all"}}
+                    {{> post-card/small-thumbnail}}
+                {{/foreach}}
+            </div>
+        </div>
+    {{/if}}
+{{/get}}

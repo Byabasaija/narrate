@@ -25,6 +25,11 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
+/* tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 
 /* Main - Your styles here! Edit below

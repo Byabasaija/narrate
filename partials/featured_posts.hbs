@@ -1,0 +1,33 @@
+{{#get "posts" filter="featured:true" limit="3" include="tags"}}
+{{#if posts}}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+            {{#foreach posts visibility="all"}}
+            <div class="bg-cover bg-center mb-6" {{#if feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
+                <div class="p-4">
+                    {{#tags limit="1"}}
+                    <a href="{{url}}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{name}}</a>
+                    {{/tags}}
+                </div>
+                <a class="block p-4" href="{{url}}"></a>
+                <div class="p-4">
+                    <h4><a href="{{url}}" class="text-lg font-semibold hover:underline">{{title}}</a></h4>
+                    <div class="mt-2">
+                        <p class="flex items-center text-gray-500 text-sm">
+                            <span class="inline-block mr-2">{{> icons/date}}</span>{{date format="MMM DD, YYYY"}}
+                        </p>
+                    </div>
+                    {{#if @first}}
+                    <p class="mt-2 mb-0 text-gray-700">
+                        {{#if custom_excerpt}}
+                            {{custom_excerpt}}
+                        {{else}}
+                            {{excerpt words="20"}}
+                        {{/if}}
+                    </p>
+                    {{/if}}
+                </div>
+            </div>
+            {{/foreach}}
+    </div>
+{{/if}}
+{{/get}}

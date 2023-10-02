@@ -1,0 +1,39 @@
+{{#get "posts" limit="5" filter="tag:revolution"}}
+{{#if posts}}
+<div class="fashion-section section-space mt-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fashion-inner-content">
+                    <div class="d-flex align-items-center justify-content-between mt-10 mb-30">
+                        <div class="section-title d-flex align-items-center ">
+                            {{> title-bar}}
+                            <h4>{{t "REVOLUTION"}}</h4>
+                        </div>
+                        <div class="tags-all">
+                            <a href="/tag/revolution">{{t "view all"}}
+                                <span class="left-icon ml-2">{{> "icons/arrow-right"}}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{#foreach posts limit="1" to="1" visibility="all"}}
+                                {{> post-card/fashion-thumbnail}}
+                            {{/foreach}}
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="post-content-wrapper single-column-post">
+                                {{#foreach posts from="2" visibility="all"}}
+                                    {{> post-card/small-thumbnail}}
+                                {{/foreach}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}
