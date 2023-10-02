@@ -2,16 +2,18 @@
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding: 3vmin 4vmin;
+    padding: 2vmin 0;
     font-size: 1.6rem;
     line-height: 1.3em;
     background: inherit;
+    border-bottom: 1.5px solid gray;
 }
 
 .gh-head a {
     color: inherit;
     text-decoration: none;
 }
+
 
 .gh-head-inner {
     display: grid;
@@ -28,7 +30,7 @@
     grid-column-start: 2;
     display: flex;
     align-items: center;
-    max-width: 200px;
+    /* max-width: 200px; */
     text-align: center;
     word-break: break-all;
 }
@@ -37,13 +39,15 @@
     display: block;
     padding: 10px 0;
     font-weight: 600;
-    font-size: 2.2rem;
+    font-size: 8rem;
     line-height: 1.2em;
+    text-transform: uppercase;
 }
 
 .gh-head-logo img {
     max-height: 40px;
 }
+
 
 
 /* Primary Navigation
@@ -101,6 +105,61 @@
     padding: 5px 0;
 }
 
+.gh-head-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gh-head-secondary .nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+/* 
+.gh-head-secondary .nav li {
+    margin: 0 1.5vmin;
+    padding: 0;
+    border-right: 1px solid #e2e0e0;
+    padding: 0 3rem;
+} */
+
+.gh-head-secondary .nav li {
+    position: relative;
+    padding: 0 3rem;
+}
+
+.gh-head-secondary .nav li::after {
+    content: "";
+    position: absolute;
+    top: 20%; 
+    bottom: 20%; 
+    right: 0;
+    border-right: 1px solid #e1d9d9;
+    width: 0;
+}
+
+.gh-head-secondary .nav li:last-of-type::after{
+    border-right: none;
+}
+
+
+.gh-head-secondary .nav a {
+    display: inline-block;
+  
+    text-decoration: none;
+    text-transform: uppercase;
+    /* box-shadow: 0 -1px 0 0 currentcolor inset; */
+}
+.gh-head-secondary.gh-secondary-nav{
+    border-top: 1px solid #e1d9d9;
+    padding-top: 2vmin;
+}
+
 
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
@@ -110,13 +169,17 @@
     display: none;
     cursor: pointer;
 }
+.gh-burger.gh-visible-burger{
+    display: block;
+    padding-right: 2rem;
+}
 
 .gh-burger-box {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 33px;
+    width: 20px;
     height: 33px;
 }
 
@@ -134,7 +197,7 @@
     margin: auto;
     content: '';
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: currentcolor;
     transition: transform 300ms cubic-bezier(.2,.6,.3,1), width 300ms cubic-bezier(.2,.6,.3,1);
     will-change: transform, width;
@@ -150,7 +213,7 @@
     margin: auto;
     content: '';
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: currentcolor;
     transition: transform 250ms cubic-bezier(.2,.7,.3,1), width 250ms cubic-bezier(.2,.7,.3,1);
     will-change: transform, width;
@@ -239,6 +302,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 @media (max-width: 900px) {
     .gh-burger {
         display: inline-block;
+    }
+    .gh-burger.gh-visible-burger{
+        display: none;
     }
     #gh-head {
         transition: all 0.4s ease-out;
