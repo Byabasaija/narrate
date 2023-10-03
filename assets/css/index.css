@@ -261,3 +261,20 @@ html,
         font-size: 1.6rem;
     }
 }
+
+.gh-headlines-wrapper {
+    overflow: hidden;
+}
+
+.gh-headlines-wrapper .row {
+    animation: slide-in 5s infinite;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

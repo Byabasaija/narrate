@@ -2171,6 +2171,11 @@ video {
   padding-bottom: 5rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -2179,11 +2184,6 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .text-lg {
@@ -2444,6 +2444,24 @@ html,
 @media (max-width: 700px) {
   .gh-author-meta {
     font-size: 1.6rem;
+  }
+}
+
+.gh-headlines-wrapper {
+  overflow: hidden;
+}
+
+.gh-headlines-wrapper .row {
+  animation: slide-in 5s infinite;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
 

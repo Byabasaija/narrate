@@ -1,28 +1,18 @@
-<div class="latest-news-section section-space">
-    <div class="container">
+
+    <div class="flex">
         <div class="section-title d-flex align-items-center mt-50 mb-30">
-            {{> title-bar}}
             <h4>{{t "Most Recent"}}</h4>
         </div>
-        {{#get "posts" limit="6" include="tags"}}
+        {{#get "posts"}}
             {{#if posts}}
-            <div class="post-wrapper-content">
+            <div class="gh-headlines-wrapper" id="hot">
                 <div class="row">
-                    {{#foreach posts limit="2" to="1" visibility="all"}}
-                        {{> post-card/news-big-thumbnail}}
+                    {{#foreach  posts limit='1' visibility="all"}}
+                     {{title}}
                     {{/foreach}}
                 </div>
             </div>
-            <div class="latest-post-area">
-                <div class="post-wrapper-content">
-                    <div class="row">
-                        {{#foreach posts from="3" limit="4" visibility="all"}}
-                            {{> post-card/news-small-thumbnail}}
-                        {{/foreach}}
-                    </div>
-                </div>
-            </div>
+            
             {{/if}}
         {{/get}}
     </div>
-</div>
