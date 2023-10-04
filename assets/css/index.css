@@ -262,17 +262,40 @@ html,
     }
 }
 
+/* Headlines container  */
 .gh-headlines-wrapper {
     overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.gh-headlines-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid whitesmoke;
 }
 
 .gh-headlines-wrapper .row {
-    animation: slide-in 5s infinite;
+    animation: slide-in 10s infinite;
+    transform: translateX(100%);
 }
 
 @keyframes slide-in {
     0% {
         transform: translateX(100%);
+    }
+    20% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(-100%);
