@@ -1,0 +1,20 @@
+<div class="col-md-6">
+    <div class="single-post-card mb-25 minheight-260">
+        <div class="single-post h-100 d-flex{{#primary_tag}} flex-column{{/primary_tag}} justify-content-between px-30 py-30" {{#if  feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
+            {{#primary_tag}}
+            <div class="feature-tag">
+                <a href="{{url}}">{{name}}</a>
+            </div>
+            {{/primary_tag}}
+        <a class="post-card-link" href="{{url}}"></a>
+        <div class="postcard-text{{^if primary_tag}} align-self-end{{/if}}">
+            <h5><a href="{{url}}">{{title}}</a></h5>
+            <div class="card-details">
+                <p class="d-flex align-items-center">
+                    <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

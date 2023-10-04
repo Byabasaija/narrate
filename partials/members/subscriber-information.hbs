@@ -1,0 +1,64 @@
+{{#foreach @member.subscriptions}}
+<div class="subscription-message">
+    {{#if cancel_at_period_end}}
+    <p>
+        <strong class="subscription-expiration-warning">{{t "Your subscription will expire on"}}
+            {{date current_period_end format="DD MMM YYYY"}}.</strong>
+        {{t "If you change your mind in the mean time you can turn auto-renew back on to continue your subscription."}}
+    </p>
+    {{else}}
+    <p>
+        {{t "Hey! You have an active {blogTitle} account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing." blogTitle=@site.title}}
+    </p>
+    {{/if}}
+</div>
+
+<div class="account-inner-sec">
+    <div class="account-information-sub">
+        <div class="account-info-wrap mb-15">
+            {{#if @member.name}}
+            <div class="your-plan">
+                <div class="customer-name">{{t "Name"}}</div>
+                <div class="customer-real-name">{{@member.name}}</div>
+            </div>
+            {{/if}}
+            <div class="your-plan">
+                <div class="customer-email">{{t "Email address"}}</div>
+                <div class="customer-email-address">{{@member.email}}</div>
+            </div>
+            <div class="your-plan">
+                <div class="customer-active">{{t "status"}}</div>
+                <div class="customer-trialing">{{status}}</div>
+            </div>
+            <div class="your-plan">
+                <div class="customer-card">{{t "Card"}}</div>
+                <div class="customer-card-number">**** **** **** {{default_payment_card_last4}}</div>
+            </div>
+            <div class="your-plan">
+                <div class="plan-nickname">{{t "Your plan"}}</div>
+                <div class="plan-interval">{{price plan}}/{{plan.interval}}</div>
+            </div>
+            <div class="your-plan">
+                <div class="start-date">
+                    {{#if cancel_at_period_end}}
+                    {{t "Expires"}}
+                    {{else}}
+                    {{t "Next billing date"}}
+                    {{/if}}
+                </div>
+                <div class="end-date">{{date current_period_end format="DD MMM YYYY"}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscription-option">
+        <div class="mem-edit-bill mr-3">
+            <a href="javascript:" data-members-edit-billing>{{t "Edit billing info"}}</a>
+        </div>
+
+        <div class="cancel-subscription">
+            {{cancel_link}}
+        </div>
+    </div>
+</div>
+{{/foreach}}

@@ -1,0 +1,71 @@
+<div class="footer-section-area py-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-footer">
+                    <div class="f-logo">
+                        {{#if @site.logo}}
+                            <a href="{{@site.url}}"><img src="{{@site.logo}}" alt="logo-img"></a>
+                            {{else}}
+                            <h2><a href="{{@site.url}}">{{@site.title}}</a></h2>
+                        {{/if}}
+                    </div>
+                    <div class="footer-text">
+                        <p>{{t "Africa Rebirth seeks to shed a light on untold African history"}}</p>
+                    </div>
+
+                   
+                </div>
+            </div>
+           
+            {{#get "tags" limit="20" include="count.posts" order="count.posts desc"}}
+                {{#if tags}}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-footer">
+                        <div class="footer-tag">
+                            <div class="footer-head">
+                                <h5>{{t "Tags"}}</h5>
+                            </div>
+                            <div class="tag-list">
+                                <ul>
+                                    {{#foreach tags visibility="public"}}
+                                        <li><a href="{{url}}">{{name}}</a></li>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            {{/get}}
+            <div class="col-lg-4 col-md-6">
+                    <div class="single-footer">
+                        <div class="footer-tag">
+                            <div class="footer-head">
+                                <h5>{{t "Company"}}</h5>
+                            </div>
+                            <div class="tag-list">
+                                <ul>
+                                     {{navigation type="secondary"}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--copyright menu section-->
+<div class="copyright-menu-area bg-light py-25">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <div class="copyright-menu">
+                    <div class="copyright-text">
+                        <p> © Copyright {{ date published_at format="YYYY" }} Africa Rebirth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

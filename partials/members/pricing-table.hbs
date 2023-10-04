@@ -1,0 +1,66 @@
+{{^if @member}}
+<!-- SINGLE PRICE BOX -->
+<div class="col-lg-4 col-md-6">
+    <div class="single-price-box">
+        <h4 class="price-head">{{t "Free"}}</h4>
+        <div class="price">
+            <h1><sub>{{price currency=@price.currency}}</sub><span>0</span></h1>
+        </div>
+        <div class="price-box-inner">
+            <ul>
+                <li>{{t "Full access to post for subscribe"}}</li>
+                <li>{{t "Weekly email newsletter"}}</li>
+                <li>{{t "No advertising"}}</li>
+            </ul>
+        </div>
+        <div>
+            <a href="{{@site.url}}/signup/" class="btn btn-outline-primary btn-xl">{{t "Subscribe"}}</a>
+        </div>
+    </div>
+</div>
+<!-- SINGLE PRICE BOX -->
+{{/if}}
+<div class="col-lg-4 col-md-6">
+    <div class="single-price-box">
+        <h4 class="price-head">{{t "Monthly"}}</h4>
+        <div class="price">
+            <h1><sub>{{price currency=@price.currency}}</sub><span>{{@price.monthly}}</span></h1>
+        </div>
+        <div class="price-box-inner">
+            <ul>
+                <li>{{t "Full access to post for subscribe"}}</li>
+                <li>{{t "Weekly email newsletter"}}</li>
+                <li>{{t "Daily updates"}}</li>
+                <li>{{t "Support independent publishing"}}</li>
+                <li>{{t "Secure Payments"}}</li>
+                <li>{{t "No advertisement"}}</li>
+            </ul>
+        </div>
+        <div>
+            <a href="javascript:" data-members-plan="Monthly" class="btn btn-outline-primary button7 btn-xl ">{{t "Subscribe"}}</a>
+        </div>
+    </div>
+</div>
+<!-- SINGLE PRICE BOX -->
+<div class="col-lg-4 col-md-6">
+    <div class="single-price-box">
+        <h4 class="price-head">{{t "Yearly"}}</h4>
+        <div class="price">
+            <h1><sub>{{price currency=@price.currency}}</sub><span>{{@price.yearly}}</span></h1>
+        </div>
+        <div class="price-box-inner">
+            <ul>
+                <li>{{t "Full access to post for subscribe"}}</li>
+                <li>{{t "Weekly email newsletter"}}</li>
+                <li>{{t "Support independent publishing"}}</li>
+                <li>{{t "Secure Payments"}}</li>
+                <li>{{t "No advertisement"}}</li>
+                <li>{{t "One step way to pay"}}</li>
+            </ul>
+        </div>
+        <div>
+            <a href="javascript:" data-members-plan="Yearly" class="btn btn-outline-primary button7 btn-xl">{{t "Subscribe"}}</a>
+        </div>
+    </div>
+</div>
+<!-- // SINGLE PRICE BOX -->

@@ -1,0 +1,35 @@
+<div class="post-navigation-wrap">
+    {{#prev_post}}
+    <div class="previous">
+        <a class="previous-post{{#unless feature_image}} no-image{{/unless}}" href="{{url}}" {{#if feature_image}}
+            style="background-image: url('{{feature_image}}')" {{/if}}>
+            <div class="d-flex w-100">
+                <div class="previous-content">
+                    <div class="arrow-text">{{t "previous post"}}</div>
+                    <h5 class="previous-post-title">{{title}}</h5>
+                </div>
+                <div class="prev-next-arrow">
+                    {{> "icons/arrow-left"}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/prev_post}}
+
+    {{#next_post}}
+    <div class="previous">
+        <a class="previous-post{{#unless feature_image}} no-image{{/unless}}" href="{{url}}" {{#if feature_image}}
+            style="background-image: url('{{feature_image}}')" {{/if}}>
+            <div class="d-flex w-100">
+                <div class="previous-content next-post-cont">
+                    <div class="arrow-text">{{t "Next post"}}</div>
+                    <h5 class="previous-post-title next-post-title">{{title}}</h5>
+                </div>
+                <div class="prev-next-arrow">
+                    {{> "icons/arrow-right"}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/next_post}}
+</div>

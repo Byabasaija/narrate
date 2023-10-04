@@ -301,3 +301,7 @@ html,
         transform: translateX(-100%);
     }
 }
+
+.gh-featured {
+    height: 400px;
+}

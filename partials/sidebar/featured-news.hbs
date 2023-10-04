@@ -1,0 +1,28 @@
+{{#get "posts" filter="featured:true" limit="5" include="tags"}}
+    {{#if posts}}
+        <div class="latest-news-section mt-50 mb-30">
+            <div class="section-title d-flex align-items-center mt-50 mb-30">
+                {{> title-bar}}
+                <h4>{{t "Featured News"}}</h4>
+            </div>
+            {{#foreach posts visibility="all"}}
+            <div class="single-news-post d-flex flex-row mb-15">
+                <a href="{{url}}">
+                {{#if feature_image}}
+                <div class="card-thumb recent-news-feature maxw-100 mr-15">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
+                        data-src="{{feature_image}}" alt="{{title}}">
+                </div>
+                {{/if}}
+                </a>
+                <div class="card-details card-details-2">
+                    <h6><a href="{{url}}">{{title}}</a></h6>
+                    <p class="d-flex align-items-center">
+                        <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
+                    </p>
+                </div>
+            </div>
+            {{/foreach}}
+        </div>
+    {{/if}}
+{{/get}}
