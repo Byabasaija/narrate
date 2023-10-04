@@ -1,13 +1,11 @@
-<div class="col-lg-4 col-md-6">
-    <div class="top-read h-100 pb-30">
-        <div class="post mb-25 h-100">
+<div class="col-start-2 col-span-2 ">
             <a href="{{url}}">
-                <div class="single-post d-flex flex-column justify-content-end px-30 py-30 h-100" {{#if  feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
+                <div class="flex flex-col justify-end px-8 py-8 top-big-thumbnail" {{#if  feature_image}} style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('{{feature_image}}');"{{/if}}>
                     <a class="post-card-link" href="{{url}}"></a>
-                    <div class="postcard-text mt-60">
-                        <h5><a href="{{url}}">{{title}}</a></h5>
+                    <div class="text-4xl text-white mt-4">
+                        <p class="text-4xl text-white"><a href="{{url}}">{{title}}</a></p>
                         <div class="card-details">
-                            <p class="d-flex align-items-center">
+                            <p class="flex items-center">
                                 <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
                             </p>
                         </div>
@@ -20,12 +18,10 @@
                             {{/if}}
                         </p>
                         {{/if}}
-                        <div class="post-btn mt-30">
-                            <a href="{{url}}" class="btn text-white">{{t "Read More"}}</a>
+                        <div class="post-btn mt-2">
+                            <a href="{{url}}" class="gh-button">{{t "Read More"}}</a>
                         </div>
                     </div>
                 </div>
             </a>
-        </div>
-    </div>
 </div>

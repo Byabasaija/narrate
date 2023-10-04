@@ -2,38 +2,28 @@
     {{#if posts}}
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 py-8">
                 {{#foreach posts visibility="all"}}
-                <div class="bg-cover bg-center mb-6 gh-featured" {{#if feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
-               
-                    <div> {{#if tags}}
-                      <div class="p-4 ">
-                        {{#tags limit="1"}}
-                        <a href="{{url}}" >
-                            <div><h5 class="text-3xl font-bold text-white">{{name}}</h5></div>
-                         </a>
-                        {{/tags}}
-                    </div>
-                    {{/if}}
-                   
-                        <a href="{{url}}">
+                <div class="bg-cover bg-center mb-6 gh-featured flex flex-col justify-end" {{#if feature_image}} style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('{{feature_image}}');"{{/if}}>
+                  <div>
+                    <a href="{{url}}">
                         <div class="p-4">
-                            <h4 class="text-4xl font-bold text-white">{{title}}</h4>
-                            <div class="mt-2">
+                             <div class="mt-2">
                                 <p class="flex items-center text-red-700 text-xl">
                                     {{date format="MMM DD, YYYY"}}
                                 </p>
                             </div>
-                            {{#if @first}}
-                            <p class="mb-0 text-2xl text-white">
+                            <h4 class="text-4xl font-bold text-white mt-3">{{title}}</h4>
+
+                            <p class="mb-0 mt-3 text-2xl text-white">
                                 {{#if custom_excerpt}}
                                     {{custom_excerpt}}
                                 {{else}}
                                     {{excerpt words="20"}}
                                 {{/if}}
                             </p>
-                            {{/if}}
+                           
                         </div>
                        </a>
-                    </div>
+                  </div>
                 </div>
                 {{/foreach}}
            </div>

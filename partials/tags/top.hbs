@@ -1,14 +1,15 @@
 {{#get "posts" limit="7" filter="tag:culture"}}
     {{#if posts}}
         <div class="top-read-section  section-space">
+
             <div class="container">
                 <div class="section-title d-flex align-items-center mt-20  mb-30">
-                    {{!-- {{> title-bar}} --}}
-                    <h4>{{t "Culture"}}</h4>
+                   <hr>
+                    <h4 class="text-3xl text-gray-600 font-bold">{{t "Governance"}}</h4>
                 </div>
-                <div class="post-wrapper-content">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
+                <div class="">
+                    <div class="grid grid-cols-4 gap-3">
+                        <div class="">
                             <div class="single-column-post top-read ">
                                 {{#foreach posts visibility="all" to="1"}}
                                     {{> post-card/big-thumbnail}}
