@@ -1,4 +1,4 @@
-{{#get "posts" filter="featured:true" limit="3" include="tags"}}
+{{#get "posts" filter="featured:true" limit="3"}}
 {{#if posts}}
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 py-4">
             {{#foreach posts visibility="all"}}
@@ -13,7 +13,7 @@
                     <h4><a href="{{url}}" class="text-lg font-semibold hover:underline">{{title}}</a></h4>
                     <div class="mt-2">
                         <p class="flex items-center text-gray-500 text-sm">
-                            <span class="inline-block mr-2">{{> icons/date}}</span>{{date format="MMM DD, YYYY"}}
+                            {{!-- <span class="inline-block mr-2">{{> icons/date}}</span>{{date format="MMM DD, YYYY"}} --}}
                         </p>
                     </div>
                     {{#if @first}}
@@ -31,3 +31,6 @@
     </div>
 {{/if}}
 {{/get}}
+
+
+{{!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Hello</button> --}}
