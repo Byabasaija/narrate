@@ -1,0 +1,25 @@
+<div class="social-card-area d-flex  align-items-center flex-wrap">
+    <div class="social-card bg-fb text-center">
+        {{#if @site.facebook}}
+        <a href="{{facebook_url}}"  class="text-white">
+            {{> icons/facebook}}
+            <p>{{t "Like us"}}</p>
+        </a>
+        {{/if}}
+    </div>
+    <div class="social-card text-center text-white bg-blue">
+        {{#if @site.twitter}}
+        <a href="{{twitter_url}}" class="text-white">
+            {{> icons/twitter}}
+            <p>{{t "Follow us"}}</p>
+        </a>
+        {{/if}}
+    </div>
+    <div class="social-card text-center bg-light-purple">
+        <a href="https://www.instagram.com/africarebirth/">
+            {{> icons/instagram}}
+            <p>{{t "Follow us"}}</p>
+        </a>
+    </div>
+    
+</div>

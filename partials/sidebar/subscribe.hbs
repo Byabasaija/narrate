@@ -1,0 +1,26 @@
+{{#unless @member}}
+<div class="subscribe-form subscribe-area text-center px-30 py-30  bg-white-smoke mt-40 mb-30">
+    <form data-members-form="subscribe">
+        <div class="subscribe-logo d-flex justify-content-center align-items-center mx-auto mb-15">
+            <span class="w-22">{{> icons/open-envelope}}</span>
+        </div>
+        <h5>{{t "SUBSCRIBE TO OUR NEWSLETTER"}}</h5>
+        <p>{{t "Sign up and receive the latest updates and news through email"}}</p>
+        <div class="subscribe-btn overflow-hidden">
+            <input data-members-email type="email" class="form-control mb-20" placeholder="Your email">
+            <button  type="submit" class="btn btn-primary btn-lg w-100 text-white">
+                <span class="button-text">{{t "Subscribe"}}</span>
+                <span class="button-loader">{{> "icons/loader"}}</span>
+            </button>
+        </div>
+        <div class="message-text">
+            <div class="message-success">
+                {{{t "<strong>Great!</strong> Check your inbox and click the link to confirm your subscription"}}}
+            </div>
+            <div class="message-error">
+                {{t "Please enter a valid email address!"}}
+            </div>
+        </div>
+    </form>
+</div>
+{{/unless}}

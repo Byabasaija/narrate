@@ -1,0 +1,46 @@
+<div class="col-lg-8 mb-lg-0 mb-40">
+    <div class="post-wrapper-content mb-30">
+        <div class="row posts-wrapper">
+            {{#foreach posts visibility="all"}}
+            <div class="col-lg-6 col-md-6 post-card">
+                <div class="single-column-post">
+                    <div class="post mb-40">
+                        <div class="single-post height-180  d-flex flex-column justify-content-between px-30 py-20" {{#if  feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
+                            {{#primary_tag}}
+                            <div class="feature-tag">
+                                <a href="{{url}}">{{name}}</a>
+                            </div>
+                            {{/primary_tag}}
+                            <a class="post-card-link" href="{{url}}"></a>
+                        </div>
+                        <div class="postcard-text postcard-text-2 mt-10">
+                            <div class="card-details">
+                                <p class="d-flex align-items-center">
+                                    <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
+                                </p>
+                            </div>
+                            <h5><a href="{{url}}">{{title}}</a></h5>
+                            <p>{{excerpt words="13"}}...</p>
+                            <div class="post-btn mt-30">
+                                <a href="{{url}}" class="btn ">{{t "Read More"}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+
+    {{!-- pagination --}}
+    {{pagination}}
+
+    {{!-- Load More --}}
+    {{!-- <div class="row mt-20 loadmore-section">
+        <div class="col-md-8 mx-auto text-center">
+            <div class="read-more-btn">
+                <button class="btn btn-primary load-more-posts">{{t "Load More"}}</button>
+            </div>
+        </div>
+    </div> --}}
+</div>

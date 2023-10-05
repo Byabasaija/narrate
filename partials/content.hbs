@@ -1,0 +1,33 @@
+{{#if table_contents}}
+<div class="toc-wrap">
+    <h2>{{t "Table of content"}}</h2>
+    <div class="toc"></div>
+</div>
+{{/if}}
+<div class="news-page-content">
+    <div class="news-full-content news-content-sidebar news-inner-cont border-bottom mb-40{{#if table_contents}} toc-content{{/if}}">
+        {{#if access}}
+            {{content}}
+        {{else}}
+            <div class="members-preview-content">
+                {{{html}}}
+            </div>
+            {{> members/visibility-content}}
+        {{/if}}
+    </div>
+
+    <div class="news-footer-section mt-3">
+        <ul class="news-tag d-flex flex-wrap">
+            {{#foreach tags visibility="public"}}
+            <li><a href="{{url}}">{{name}}</a></li>
+            {{/foreach}}
+        </ul>
+        <div class="py-30">
+            {{> author-card}}
+        </div>
+        {{#unless hide_comment}}
+        {{!-- comment Section --}}
+        {{> cove-comments}}
+        {{/unless}}
+    </div>
+</div>

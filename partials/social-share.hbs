@@ -1,0 +1,25 @@
+{{#has visibility="public"}}
+ <div class="news-sharing-area d-flex justify-content-center align-items-center py-10 flex-wrap">
+    <div class="share-news-ttitle mr-15">{{t "Share this news on:"}}</div>
+    <ul class="social-share-icon d-flex flex-wrap">
+        <li>
+            <a  class="bg-fb" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">{{> icons/facebook}}</a>
+        </li>
+        <li>
+            <a class="bg-dimond-blue" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">{{> icons/twitter}}</a>
+        </li>
+        <li>
+            <a class=" bg-blue" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}">{{> icons/linkedin}}</a>
+        </li>
+        <li>
+            <a class="bg-light-red" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://pinterest.com/pin/create/button/?url={{url absolute="true"}}{{#if feature_image}}&media={{feature_image}}{{/if}}">{{> icons/pinterest}}</a>
+        </li>
+        <li class="copy-link-wrapper">
+            <a class="copy-link bg-light-red" data-link="{{@site.url}}{{url}}" href="#">
+                {{> icons/copy}}
+                <span class="copied">{{t "Copied to clipboard"}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
+{{/has}}

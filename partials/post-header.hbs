@@ -1,0 +1,24 @@
+<div class="news-headlines-area mb-10">
+    <div class="newspage-headlines">
+        <h1>{{title}}</h1>
+    </div>
+    <ul class="report-time  d-flex flex-wrap mb-20 mt-20 mt-sm-0">
+        <li>{{t "Posted by"}}<span>&nbsp;&nbsp;{{authors}}</span></li>
+        <li>&nbsp;{{date format="MMM DD, YYYY"}}</li>
+    </ul>
+</div>
+<hr />
+<div class="new-feature-area my-25">
+    <div class="news-type-section d-flex justify-content-between align-items-center flex-wrap">
+        <!-- social share icon -->
+        {{> social-share}}
+        <ul class="report-time d-flex">
+            <li class="d-flex align-items-center">
+                <span class="w-16 -mt-2">
+                    {{> icons/clock}}
+                </span>
+                &nbsp;&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min reads")}}
+            </li>
+        </ul>
+    </div>
+</div>

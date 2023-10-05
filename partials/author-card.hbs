@@ -1,0 +1,52 @@
+{{#primary_author}}
+    <div class="single-author-box">
+        <div class="container">
+            <div class="row pb-30">
+                {{#if profile_image}}
+                <div class="col-md-4">
+                    <div class="author-profile-image">
+                        <img class="lazy" srcset="{{img_url profile_image size="s"}} 300w,
+                                {{img_url profile_image size="m"}} 600w,
+                                {{img_url profile_image size="l"}} 1000w,
+                                {{img_url profile_image size="xl"}} 1300w,
+                                {{img_url profile_image size="xxl"}} 2000w"
+                            sizes="(max-width: 350px) 350px, 400px"
+                            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
+                            data-src="{{img_url profile_image size="m"}}"
+                            alt="{{name}}"
+                        />
+                    </div>
+                </div>
+                {{/if}}
+
+                <div class="{{#if profile_image}}col-md-8 author-header-content{{else}}col-md-12 mx-auto text-center author-meta-card{{/if}}">
+                    <div class="author-header-inner">
+                        <h3 class="author"><a href="{{url}}">{{name}}</a></h3>
+                        {{#if bio}}
+                            <p class="bio">
+                                {{bio}}
+                            </p>
+                        {{/if}}
+                        <!-- social icon -->
+                        {{#has any="facebook,twitter,website"}}
+                        <p>{{t "follow me"}} :</p>
+                        <div class="author-profile-link d-flex align-items-center flex-wrap">
+                            {{#if facebook}}
+                            <a class="text-fb w-16" href="{{facebook_url}}">{{> icons/facebook}}</a>
+                            {{/if}}
+
+                            {{#if twitter}}
+                            <a class="text-dimond-blue w-16" href="{{twitter_url}}">{{> icons/twitter}}</a>
+                            {{/if}}
+
+                            {{#if website}}
+                            <a class="text-red w-16" href="{{website}}">{{> icons/globe}}</a>
+                            {{/if}}
+                        </div>
+                        {{/has}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/primary_author}}

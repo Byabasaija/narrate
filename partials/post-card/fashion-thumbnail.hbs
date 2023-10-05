@@ -1,0 +1,28 @@
+<div class="post-content-wrapper single-column-post">
+    <div class="post mb-30">
+        <a href="{{url}}">
+            <div class="single-post height-220  d-flex flex-column justify-content-between px-30 py-20" {{#if  feature_image}} style="background-image:url('{{feature_image}}');"{{/if}}>
+            </div>
+        </a>
+        <div class="postcard-text postcard-text-2 mt-10">
+            <div class="card-details">
+                <p class="d-flex align-items-center">
+                    <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
+                </p>
+            </div>
+            <h5><a href="{{url}}">{{title}}</a></h5>
+            {{#if @first}}
+            <p>
+                {{#if custom_excerpt}}
+                {{custom_excerpt}}
+            {{else}}
+                {{excerpt words="20"}}
+                {{/if}}
+            </p>
+            {{/if}}
+            <div class="post-btn mt-30">
+                <a href="{{url}}" class="btn ">{{t "Read More"}}</a>
+            </div>
+        </div>
+    </div>
+</div>

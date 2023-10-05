@@ -1,0 +1,43 @@
+<div class="popular-tags section-padding section-bg">
+    <div class="container">
+        <div class="row">
+            {{!-- Popular tags --}}
+            <div class="col">
+                <div class="d-flex align-items-center justify-content-between flex-wrap pb-50">
+                    <h4 class="title-text">{{t "Popular tags"}}</h4>
+                    <div class="all-tags">
+                        <a href="https://www.africarebirth.com/tags/">{{t "view all"}}</a>
+                    </div>
+                </div>
+                
+                {{#get "tags" limit="6" include="count.posts" order="count.posts desc"}}
+                    {{#if tags}}
+                    <!-- tag section -->
+                    <div class="row">
+                    {{#foreach tags}}
+                        <!-- single tag item -->
+                        <div class="col-md-6 col-lg-4">
+                            <a href="{{url}}">
+                                <div class="single-tag-item{{#unless feature_image}} no-feature-image{{/unless}}">
+                                    {{#if feature_image}}
+                                    <div class="tag-thumb">
+                                        <img src="{{feature_image}}" alt="{{name}}">
+                                    </div>
+                                    {{/if}}
+                                    <div class="tag-name">
+                                        <h6 class="tag">#{{name}}</h6>
+                                        <p class="total-posts">{{plural count.posts empty=(t "No Post") singular=(t "% ") plural=(t "% ")}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- // single tag item -->
+                    {{/foreach}}
+                    </div>
+                    <!-- // tag section -->
+                    {{/if}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</div>

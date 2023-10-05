@@ -6,10 +6,10 @@
 // Import JS
 import menuOpen from "./menuOpen";
 import infiniteScroll from "./infiniteScroll";
-import openMenu from "./infiniteScroll"
+import showTitles from "./headlines";
 
 
 // Call the menu and infinite scroll functions
 menuOpen();
+showTitles()
 infiniteScroll();
-openMenu();

@@ -1,28 +1,12 @@
-<div class="latest-news-section section-space">
-    <div class="container">
-        <div class="section-title d-flex align-items-center mt-50 mb-30">
-            {{> title-bar}}
-            <h4>{{t "Most Recent"}}</h4>
+
+    <div class="container flex items-center bg-red-500 mt-2">
+        <div class="px-5">
+            <h2 class="text-xl font-bold text-white ">{{t "Headlines"}}</h2>
         </div>
-        {{#get "posts" limit="6" include="tags"}}
-            {{#if posts}}
-            <div class="post-wrapper-content">
-                <div class="row">
-                    {{#foreach posts limit="2" to="1" visibility="all"}}
-                        {{> post-card/news-big-thumbnail}}
-                    {{/foreach}}
-                </div>
-            </div>
-            <div class="latest-post-area">
-                <div class="post-wrapper-content">
-                    <div class="row">
-                        {{#foreach posts from="3" limit="4" visibility="all"}}
-                            {{> post-card/news-small-thumbnail}}
-                        {{/foreach}}
+                    <div class="gh-headlines-wrapper bg-slate-50 py-3">
+                        <div class="row pl-3" id="headlines">      
+                        </div>
                     </div>
-                </div>
-            </div>
-            {{/if}}
-        {{/get}}
     </div>
-</div>
+
+
