@@ -1,16 +1,20 @@
 <!--single news  post -->
-<div class="single-news-post d-flex  mb-15">
+<div class="flex justify-center mb-15">
     <a href="{{url}}">
     {{#if feature_image}}
-        <div class="card-thumb mr-15">
+        <div class="mr-15">
             <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="{{feature_image}}" alt="{{title}}">
         </div>
     {{/if}}
     </a>
-    <div class="card-details card-details-2">
-        <h6><a href="{{url}}">{{title}}</a></h6>
+    <div class="">
+        <h6><a href="{{url}}" class="text-gray-900 text-bold">{{title}}</a></h6>
         <p class="d-flex align-items-center">
-            <span class="w-14 inline-block">{{> icons/date}}</span>&nbsp;&nbsp;{{date format="MMM DD, YYYY"}}
+            {{date format="MMM DD, YYYY"}} 
+            
         </p>
+        <div class="gh-post-authors">
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
     </div>
 </div>
