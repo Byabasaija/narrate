@@ -6,7 +6,15 @@
     font-size: 1.6rem;
     line-height: 1.3em;
     background: inherit;
-    border-bottom: 1.5px solid gray;
+    border-bottom: 1.5px solid #e7e4e4;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#gh-head.scroll-shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
 }
 
 .gh-head a {
@@ -80,21 +88,7 @@
 }
 
 
-/* Side Navigation */
-.gh-side-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    /* background-color: #111; */
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    background-color: #fff; /* White background */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Shadow effect */
-}
+
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */

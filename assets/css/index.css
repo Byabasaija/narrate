@@ -43,10 +43,74 @@ html,
     background: #ffffff;
 }
 
-.gh-main {
+
+/* .gh-main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+} */
+
+/* Container for the main content and the side navigation */
+.gh-main-viewport {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Main content */
+.gh-main {
+    flex-grow: 1;
+    transition: all 0.5s;
+}
+
+/* Side Navigation */
+.gh-side-nav {
+    height: calc(100% - 140px); /* Assuming your navbar is 60px high */
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 140px; /* Assuming your navbar is 60px high */
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: all 0.5s;
+    /* padding-top: 60px; */
+    border-right: 1px solid #e7e4e4;
+}
+
+.gh-side-nav .nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 20px;
+}
+
+.gh-side-nav .nav  li{
+    padding: 8px 10px;
+  
+}
+
+.gh-side-nav .nav  li:hover{
+    background-color: #bd081b;
+    color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.gh-side-nav .nav li a{
+    color: inherit;
+}
+
+
+
+/* Class to add when the hamburger menu is clicked */
+.gh-side-nav-open {
+    width: 250px;
+}
+
+/* Class to add when the hamburger menu is clicked */
+.gh-main-open {
+    margin-left: 250px;
 }
 
 .gh-page {
@@ -72,6 +136,12 @@ html,
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    transition: all 0.5s;
+}
+
+.gh-open-container{
+    padding: 0 30px;
+    max-width: 100%;
 }
 
 .gh-head-actions a:not(.gh-button) {

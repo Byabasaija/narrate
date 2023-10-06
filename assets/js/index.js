@@ -7,9 +7,13 @@
 import menuOpen from "./menuOpen";
 import infiniteScroll from "./infiniteScroll";
 import showTitles from "./headlines";
+import openSideBar from "./menuOpen"
+import raisedNavbar from "./menuOpen"
 
 
 // Call the menu and infinite scroll functions
 menuOpen();
-showTitles()
+showTitles();
+openSideBar();
+raisedNavbar();
 infiniteScroll();

@@ -42,9 +42,7 @@
             {{search}}
            
         </div>
-        <div class="gh-side-nav" id="sidenav">
-            {{navigation type="secondary"}}
-        </div>
+        
         <div class="gh-head-actions">
             <div class="gh-head-actions-list">
                 {{search}}
@@ -63,11 +61,16 @@
     </nav>
 </header>
 
-<main class="gh-main">
 
-    {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+<main class="gh-main-viewport">
+    <div class="gh-side-nav" id="sidenav">
+        {{navigation type="secondary"}}
+    </div>
+    <section class="gh-main">
 
+        {{{body}}}
+        {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+    </section>
 </main>
 
 <footer class="gh-foot">
@@ -86,6 +89,34 @@
 {{!-- <foot> --}}
 {{ghost_foot}}
 {{!-- Outputs important scripts - should always be included before closing body tag --}}
+<script>
+    let hamburger = document.getElementById('hamburger');
+    let sidenav = document.getElementById('sidenav');
+    let main = document.querySelector('.gh-main');
+    let container = document.querySelector('.gh-container');
 
+    hamburger.addEventListener('click', function() {
+        if (sidenav.style.width === '0px' || sidenav.style.width === '') {
+            sidenav.style.width = '250px';
+            sidenav.classList.add('gh-side-nav-open');
+            main.classList.add('gh-main-open');
+            container.classList.add('gh-open-container');
+        } else {
+            sidenav.style.width = '0px';
+            sidenav.classList.remove('gh-side-nav-open');
+            main.classList.remove('gh-main-open');
+            container.classList.remove('gh-open-container');
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        let header = document.getElementById('gh-head');
+        if (window.pageYOffset > 0) {
+            header.classList.add('scroll-shadow');
+        } else {
+            header.classList.remove('scroll-shadow');
+        }
+    });
+</script>
 </body>
 </html>

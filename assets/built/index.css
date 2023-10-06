@@ -438,7 +438,15 @@ h6 {
   font-size: 1.6rem;
   line-height: 1.3em;
   background: inherit;
-  border-bottom: 1.5px solid gray;
+  border-bottom: 1.5px solid #e7e4e4;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#gh-head.scroll-shadow {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+  border-bottom: 0;
 }
 
 .gh-head a {
@@ -505,25 +513,6 @@ h6 {
 
 .gh-head-menu .nav-current a {
   box-shadow: 0 -1px 0 0 currentcolor inset;
-}
-
-/* Side Navigation */
-
-.gh-side-nav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  /* background-color: #111; */
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  background-color: #fff;
-  /* White background */
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  /* Shadow effect */
 }
 
 /* Secondary Navigation
@@ -2212,13 +2201,12 @@ video {
   gap: 1rem;
 }
 
-<<<<<<< HEAD
-.rounded {
-  border-radius: 0.25rem;
+.overflow-hidden {
+  overflow: hidden;
 }
 
-.rounded-full {
-  border-radius: 9999px;
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .bg-blue-500 {
@@ -2226,20 +2214,7 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
-=======
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .bg-red-500 {
->>>>>>> 7030824ed39868b23233e9ee667cd69cd4c46863
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
@@ -2247,12 +2222,6 @@ video {
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.from-indigo-500 {
-  --tw-gradient-from: #6366f1 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(99 102 241 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .bg-cover {
@@ -2297,15 +2266,9 @@ video {
   padding-bottom: 5rem;
 }
 
-<<<<<<< HEAD
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-=======
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
->>>>>>> 7030824ed39868b23233e9ee667cd69cd4c46863
 }
 
 .py-5 {
@@ -2318,8 +2281,6 @@ video {
   padding-bottom: 2rem;
 }
 
-<<<<<<< HEAD
-=======
 .pl-0 {
   padding-left: 0px;
 }
@@ -2347,7 +2308,6 @@ video {
   line-height: 2.5rem;
 }
 
->>>>>>> 7030824ed39868b23233e9ee667cd69cd4c46863
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2356,10 +2316,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-bold {
@@ -2400,10 +2356,77 @@ html,
   background: #ffffff;
 }
 
+/* .gh-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Container for the main content and the side navigation */
+
+.gh-main-viewport {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Main content */
+
 .gh-main {
-  flex: 1 0 auto;
+  flex-grow: 1;
+  transition: all 0.5s;
+}
+
+/* Side Navigation */
+
+.gh-side-nav {
+  height: calc(100% - 140px);
+  /* Assuming your navbar is 60px high */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 140px;
+  /* Assuming your navbar is 60px high */
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: all 0.5s;
+  /* padding-top: 60px; */
+  border-right: 1px solid #e7e4e4;
+}
+
+.gh-side-nav .nav{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 20px;
+}
+
+.gh-side-nav .nav  li{
+  padding: 8px 10px;
+}
+
+.gh-side-nav .nav  li:hover{
+  background-color: #bd081b;
+  color: #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.gh-side-nav .nav li a{
+  color: inherit;
+}
+
+/* Class to add when the hamburger menu is clicked */
+
+.gh-side-nav-open {
+  width: 250px;
+}
+
+/* Class to add when the hamburger menu is clicked */
+
+.gh-main-open {
+  margin-left: 250px;
 }
 
 .gh-page {
@@ -2429,6 +2452,12 @@ html,
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.gh-open-container{
+  padding: 0 30px;
+  max-width: 100%;
 }
 
 .gh-head-actions a:not(.gh-button) {
@@ -2617,15 +2646,6 @@ html,
   }
 }
 
-<<<<<<< HEAD
-.hover\:bg-blue-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
-=======
 /* Headlines container  */
 
 .gh-headlines-wrapper {
@@ -2676,7 +2696,11 @@ html,
 
 .top-big-thumbnail {
   height: 500px;
->>>>>>> 7030824ed39868b23233e9ee667cd69cd4c46863
+}
+
+.hover\:bg-blue-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px) {
